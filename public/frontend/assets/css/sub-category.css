@@ -1,0 +1,175 @@
+.samachar {
+    padding-top: 2rem;
+}
+
+.samachar .page-title h4:after {
+    content: '';
+    width: 47px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .one h4:after {
+    content: '';
+    width: 83px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .two h4:after,
+.samachar .three h4:after,
+.samachar .nineteen h4:after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .four h4:after,
+.samachar .twentyone h4:after,
+.samachar .twentysix h4:after,
+.samachar .twentynine h4:after {
+    content: '';
+    width: 66px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .six h4:after,
+.samachar .twelve h4:after {
+    content: '';
+    width: 63px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .seven h4:after {
+    content: '';
+    width: 77px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .eight h4:after,
+.samachar .seventeen h4:after {
+    content: '';
+    width: 88px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .ten h4:after,
+.samachar .fifteen h4:after,
+.samachar .twenty h4:after {
+    content: '';
+    width: 53px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .eleven h4:after {
+    content: '';
+    width: 68px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .thirteen h4:after,
+.samachar .twentyeight h4:after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .fourteen h4:after {
+    content: '';
+    width: 70px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .sixteen h4:after {
+    content: '';
+    width: 58px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .eighteen h4:after,
+.samachar .twentythree h4:after,
+.samachar .twentyfive h4:after {
+    content: '';
+    width: 35px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .twentytwo h4:after {
+    content: '';
+    width: 56px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .twentyfour h4:after {
+    content: '';
+    width: 74px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}
+
+.samachar .twentyseven h4:after {
+    content: '';
+    width: 85px;
+    height: 3px;
+    background: var(--secondary-color) !important;
+    position: absolute;
+    top: 29px;
+    left: 0;
+}

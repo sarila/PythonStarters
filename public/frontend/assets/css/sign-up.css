@@ -1,0 +1,38 @@
+.main .wrapper {
+  max-width: 28rem;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem 2rem;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 0.25rem;
+  color: var(--black-color);
+  background: var(--white-color);
+  box-shadow: 0px 2px 7px rgb(22 30 106 / 30%);
+}
+.main .wrapper h4{
+color: var(--primary-color);
+font-weight: bold;
+position: relative;
+margin-bottom: 1rem;
+}
+.main .wrapper h4:after {
+  content: '';
+  width: 68px;
+  height: 2px;
+  background: var(--secondary-color) !important;
+  position: absolute;
+  top: 29px;
+  left: 0;
+}
+.signup .name {
+  font-size: 1rem;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    outline: none;
+    color: var(--black-color);
+    background: var(--color-light);
+    text-transform: unset;
+    text-rendering: optimizeLegibility;
+}
