@@ -46,7 +46,6 @@ class PosterController extends Controller
         $rule = [
             'title' => 'required | string',
             'placement' => 'required',
-            'youtube_url' => 'sometimes',
             'image' => 'sometimes| file | max:6000',
         ];
         $customMessages = [
@@ -90,7 +89,8 @@ class PosterController extends Controller
      */
     public function show(Poster $poster)
     {
-        //
+        return view('admin.posters.show', compact('poster'));
+
     }
 
     /**
@@ -101,7 +101,7 @@ class PosterController extends Controller
      */
     public function edit(Poster $poster)
     {
-        //
+        return view('admin.posters.edit', compact('poster'));
     }
 
     /**
@@ -113,7 +113,41 @@ class PosterController extends Controller
      */
     public function update(Request $request, Poster $poster)
     {
-        //
+        $data = $request->all();
+        $rule = [
+            'title' => 'required | string',
+            'placement' => 'required',
+            'image' => 'sometimes| file | max:6000',
+        ];
+        $customMessages = [
+            'title.required'  => 'Please enter the title for image',
+            'title.string'  => 'Title should be of string',
+            'placement.required'  => 'Placement is required',
+            'image.file'  => 'Image must be of file type',
+            'image.max'  => 'Image must be under 3000 size',
+        ];
+        $this->validate($request, $rule, $customMessages);
+        
+        if($request->hasFile('image')){
+            $image_tmp = $request->file('image');
+            if($image_tmp->isValid()){
+                $image_name = $image_tmp->getClientOriginalName();
+                $extension = $image_tmp->getClientOriginalExtension();
+                $imageName = $image_name.'-'.rand().'.'.$extension;
+                $image_path = 'public/uploads/posters/';
+                $image_tmp->move($image_path, $imageName);
+                $poster->image = $imageName;
+
+            }
+        }
+        $poster->title = $data['title'];
+        $poster->placement = $data['placement'];
+        $poster->category_id = $data['category_id'];
+
+        $poster->save();
+
+        Session::flash('success_message', 'Poster has been updated successfully');
+        return redirect()->route('posters.index');
     }
 
     /**
@@ -124,7 +158,16 @@ class PosterController extends Controller
      */
     public function destroy(Poster $poster)
     {
-        //
+        $poster->delete();
+        $image_path = 'public/uploads/posters/';
+
+        if (!empty($poster->image)) {
+            if (file_exists($image_path . $poster->image)) {
+                unlink($image_path . $poster->image);
+            }
+        }
+        Session::flash('success_message', 'Poster Deleted successfully!');
+        return redirect()->back();
     }
 
 
