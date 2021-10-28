@@ -37,7 +37,7 @@
                     <tr>
                         <th>Description</th>
                         <td>
-                            {{ $video->description}}
+                            {!! $video->description !!}
                         </td>
                     </tr>
 

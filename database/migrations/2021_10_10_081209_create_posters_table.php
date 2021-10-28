@@ -16,7 +16,7 @@ class CreatePostersTable extends Migration
         Schema::create('posters', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->integer('placement');
             $table->UnsignedBigInteger('category_id')->nullable();
             $table->UnsignedBigInteger('news_id')->nullable();

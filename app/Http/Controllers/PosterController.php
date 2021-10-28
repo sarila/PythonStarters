@@ -101,7 +101,8 @@ class PosterController extends Controller
      */
     public function edit(Poster $poster)
     {
-        return view('admin.posters.edit', compact('poster'));
+        $categories = Category::all();
+        return view('admin.posters.edit', compact('poster', 'categories'));
     }
 
     /**
@@ -117,14 +118,11 @@ class PosterController extends Controller
         $rule = [
             'title' => 'required | string',
             'placement' => 'required',
-            'image' => 'sometimes| file | max:6000',
         ];
         $customMessages = [
             'title.required'  => 'Please enter the title for image',
             'title.string'  => 'Title should be of string',
             'placement.required'  => 'Placement is required',
-            'image.file'  => 'Image must be of file type',
-            'image.max'  => 'Image must be under 3000 size',
         ];
         $this->validate($request, $rule, $customMessages);
         

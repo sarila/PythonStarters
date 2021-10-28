@@ -92,9 +92,10 @@
                                                    <label for="video">Video </label>
                                                    <input type="file" name="video" class="form-control" id="video">
                                                </div>
-                                               @if(!empty($video->video))
-                                                   <a href="{{ asset('public/uploads/videos/'.$video->video) }}" class="pull-right" target="_blank"> &nbsp;  View Video</a>
-                                                   <a href="" class="pull-right btn-delete" rel="{{ $video->id }}" rel1="delete-newsvideo">Delete Video | </a>
+                                                @if(!empty($video->video))
+                                                <a href="{{ asset('public/uploads/videos/'.$video->video) }}" class="pull-right" target="_blank"> &nbsp;  View Video</a>
+                                               @else
+                                                   <img class="img-responsive" src="https://via.placeholder.com/380x230?text=Thumbnail+Image" alt="" style="margin-bottom: 10px" id="one">
                                                @endif
                                             </div>
                                        </div>
