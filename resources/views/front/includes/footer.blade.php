@@ -9,9 +9,9 @@
                     </div>
                     <div class="site-detail">
                         <ul>
-                            <li> <img src="{{ asset('public/frontend/assets/images/meeting-point.png') }}" class="img-fluid" alt=""> <span class="site-info">Anamnagar, Kathmandu Nepal</span></li>
-                            <li> <img src="{{ asset('public/frontend/assets/images/customer-service.png') }}" class="img-fluid" alt=""> <span class="site-info">9851017402, 9851005911, 9851097074</span></li>
-                            <li> <img src="{{ asset('public/frontend/assets/images/email.png') }}" class="img-fluid" alt=""> <span class="site-info">kclochan@gmail.com</span></li>
+                            <li> <img src="{{ asset('public/frontend/assets/images/meeting-point.png') }}" class="img-fluid" alt=""> <span class="site-info">{{$companyinfo->address}}</span></li>
+                            <li> <img src="{{ asset('public/frontend/assets/images/customer-service.png') }}" class="img-fluid" alt=""> <span class="site-info">{{ $companyinfo->phone }}</span></li>
+                            <li> <img src="{{ asset('public/frontend/assets/images/email.png') }}" class="img-fluid" alt=""> <span class="site-info"> {{ $companyinfo->email }}</span></li>
                         </ul>
                     </div>
                 </div>

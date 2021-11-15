@@ -10,9 +10,6 @@
             <div class="row">
                 @include('front.partials._dashboardlinks')
 
-
-
-
                 <div class="col-lg-9">
 
                     @include('admin.includes._message')
@@ -22,10 +19,6 @@
                                 <a href="{{ route('addNews') }}" class="btn btn-info" style="background-color: #FF0000 !important; border: #FF0000"> <i class="fa fa-plus"></i> समाचार लेख्नुहोस</a>
                             </div>
                         </h5>
-
-
-
-
 
                         <table id="example" class="display" style="width:100%">
                             <thead>

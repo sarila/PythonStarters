@@ -28,7 +28,7 @@
                     <div> <a href="{{ route('userProfile') }}">My Profile</a></div>
                     <div> <a href="{{ route('userProfileEdit') }}">Edit Profile</a></div>
                     <div> <a href="{{ route('userNews') }}">News Management</a></div>
-                    <div> <a href="{{ route('videos.index') }}">Videos</a></div>
+                    <!-- <div> <a href="{{ route('videos.index') }}">Videos</a></div> -->
                     <div> <a href="{{ route('userChangePassword') }}">Change Password</a></div>
                     <div> <a href="{{ route('userLogout') }}">Logout</a></div>
                 </div>

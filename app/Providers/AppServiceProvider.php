@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Providers;
-use App\Models\Social;
 use App\Models\Theme;
 use App\Models\Poster;
+use App\Models\Social;
+use App\Models\Companyinfo;
 use Illuminate\Support\Facades\View;
-
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -31,6 +31,9 @@ class AppServiceProvider extends ServiceProvider
         });
         View::composer(['front.includes.header'], function($view){
             $view->with('header_poster', Poster::where('placement', 0)->first());
+        });
+        View::composer(['front.includes.footer'], function($view){
+            $view->with('companyinfo', Companyinfo::first());
         });
         View::composer(['front.includes.sidebar'], function($view){
             $view->with('sidebar_poster', Poster::where('placement', 2)->first());

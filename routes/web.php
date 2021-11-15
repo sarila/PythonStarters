@@ -122,6 +122,9 @@ Route::prefix('/admin')->group(function(){
         // Social Media Management
         Route::get('/social', 'SocialMediaController@social')->name('social');
         Route::post('/social/update/{id}', 'SocialMediaController@socialUpdate')->name('socialUpdate');
+         // Company Management
+        Route::get('/companyinfo', 'CompanyInfoController@company')->name('companyinfo');
+        Route::post('/companyinfo/update/{id}', 'CompanyInfoController@companyUpdate')->name('companyUpdate');
 
         // Category Controller
         Route::get('/category', 'CategoryController@index')->name('category.index');

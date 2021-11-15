@@ -26,6 +26,14 @@
                     <a href="{{ route('social') }}"><i class="la la-facebook"></i> <span>Social Media Settings</span></a>
                 </li>
 
+                @if(Session::get('admin_page') == 'companyinfo')
+                    @php $active = "active" @endphp
+                @else
+                    @php $active = "" @endphp
+                @endif
+                <li class="{{ $active }}">
+                    <a href="{{ route('companyinfo') }}"><i class="la la-house"></i> <span>Company Information</span></a>
+                </li>
 
 
                 @if(Session::get('admin_page') == 'password')

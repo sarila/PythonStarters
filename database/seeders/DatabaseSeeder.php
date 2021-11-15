@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Admin;
-use App\Models\NewsType;
-use App\Models\Social;
-use App\Models\Theme;
 use App\Models\User;
+use App\Models\Admin;
+use App\Models\Theme;
+use App\Models\Social;
+use App\Models\NewsType;
+use App\Models\Companyinfo;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +19,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Companyinfo::insert([
+            'address' => "Baneshwor, Kathmandu",
+            'phone' => "9870986754",
+            'email' => "info@company.com",
+            'tagline' => "All news in your hand",
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
         Admin::insert([
             'name' => "Sushan Paudyal",
             'email' => "sushan.paudyal@gmail.com",
@@ -34,6 +43,8 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        
 
         Social::insert([
             'facebook' => "https://www.facebook.com/JanatakoOnlinecom-103862514732250/",

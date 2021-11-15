@@ -30,6 +30,7 @@ class PosterController extends Controller
      */
     public function create()
     {
+        Session::put('admin_page', 'add_posters');
         $categories = Category::all();
         return view('admin.posters.create', compact('categories'));
     }
@@ -78,6 +79,7 @@ class PosterController extends Controller
         $poster->save();
 
         Session::flash('success_message', 'Poster has been added successfully');
+        Session::put('admin_page', 'posters');
         return redirect()->route('posters.index');
     }
 
@@ -89,6 +91,7 @@ class PosterController extends Controller
      */
     public function show(Poster $poster)
     {
+        Session::put('admin_page', 'posters');
         return view('admin.posters.show', compact('poster'));
 
     }
