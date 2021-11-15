@@ -220,15 +220,8 @@
                               @endforeach
                         </div>
                     </li>
-
-
-
                 </ul>
             </div>
-
-
-
-
 
             <div class="second-bg">
                 <div class="container">
@@ -242,84 +235,42 @@
                                 </a>
                                 <ul class="feat-show">
                                     <li><a href="{{ route('janataNews') }}">पढ्नुहोस्</a></li>
-                                    <li><a href="{{ route('writeNews') }}">लेख्नुहोस्</a></li>
+                                    @if(Auth::check())
+                                    <li><a class="dropdown-item" href="{{ route('addNews') }}"> लेख्नुहोस्</a></li>
+                                    @else
+                                    <li><a class="dropdown-item" href="{{ route('writeNews') }}"> लेख्नुहोस्</a></li>
+                                    @endif
                                 </ul>
                             </li>
+                            @php $main_categories = \App\Models\Category::where('parent_id', 0)->take(7)->get(); @endphp
+                            @foreach($main_categories as $cat)
                             <li>
-                                <a class="samachar-btn">समाचार
-                                    <span class="fas fa-caret-down second"></span>
+                                @php $sub_categories = \App\Models\Category::where('parent_id', $cat->id)->get(); @endphp
+                                <a class="nav-link @if($sub_categories->count() > 0) dropdown-toggle @endif" href="{{ route('categoryNews', $cat->slug) }}">
+                                   {{ $cat->category_name_np }}
                                 </a>
-                                <ul class="samachar-show">
-                                    <li><a href="rastriya.php">राष्ट्रिय</a></li>
-                                    <li><a href="antarastriya.php">अन्तर्राष्ट्रिय</a></li>
-                                    <li><a href="sthaniya.php">स्थानीय</a></li>
-                                </ul>
+
+                                @if($sub_categories->count() > 0)
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                    @foreach($sub_categories as $sub_cat)
+                                    <a class="dropdown-item" href="{{ route('categoryNews', $sub_cat->slug) }}">{{ $sub_cat->category_name_np }} </a>
+                                    @endforeach
+                                </div>
+                                    @endif
                             </li>
+                            @endforeach
                             <li>
-                                <a class="jeewan-btn">जीवनशैली
-                                    <span class="fas fa-caret-down third"></span>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    अन्य
                                 </a>
-                                <ul class="jeewan-show">
-                                    <li><a href="health.php">स्वास्थ्य</a></li>
-                                    <li><a href="khanpin.php">खानपिन</a></li>
-                                    <li><a href="fashion.php">फेसन</a></li>
-                                    <li><a href="decoration.php">सजावट</a></li>
-                                    <li><a href="anivani.php">आनिवानी</a></li>
-                                </ul>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                    @php $categories = \App\Models\Category::take(90)->skip(7)->get(); @endphp
+                                  @foreach($categories as $category)
+                                    <a class="dropdown-item" href="{{ route('categoryNews', $category->slug) }}"> {{ $category->category_name_np }}</a>
+                                      @endforeach
+                                </div>
                             </li>
-                            <li>
-                                <a class="artha-btn">अर्थ बजार
-                                    <span class="fas fa-caret-down fourth"></span>
-                                </a>
-                                <ul class="artha-show">
-                                    <li><a href="share-bazar.php">शेयर बजार</a></li>
-                                    <li><a href="udhyog.php">उद्योग</a></li>
-                                    <li><a href="byapaar.php">व्यापार</a></li>
-                                    <li><a href="business.php">व्यवसाय</a></li>
-                                    <li><a href="economy.php">अर्थतन्त्र</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="suchana-btn">सूचना प्रविध
-                                    <span class="fas fa-caret-down fifth"></span>
-                                </a>
-                                <ul class="suchana-show">
-                                    <li><a href="technology.php">टेक्नोलोज</a></li>
-                                    <li><a href="gadgets.php">ग्याजेट्स</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="khelkud-btn">खेलकुद
-                                    <span class="fas fa-caret-down sixth"></span>
-                                </a>
-                                <ul class="khelkud-show">
-                                    <li><a href="cricket.php">क्रिकेट</a></li>
-                                    <li><a href="football.php">फुटबल</a></li>
-                                    <li><a href="martial-arts.php">मार्सल आर्ट</a></li>
-                                    <li><a href="other-sports.php">अन्य</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="kala-btn">कला साहित्य
-                                    <span class="fas fa-caret-down seventh"></span>
-                                </a>
-                                <ul class="kala-show">
-                                    <li><a href="culture.php">संस्कृति</a></li>
-                                    <li><a href="filmy.php">फिल्मी</a></li>
-                                    <li><a href="entertainment.php">मनोरञ्जन</a></li>
-                                    <li><a href="relationship.php">सम्बन्ध</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="bichar-btn">विचार /दृष्टिकोण
-                                    <span class="fas fa-caret-down eight"></span>
-                                </a>
-                                <ul class="bichar-show">
-                                    <li><a href="article.php">लेख</a></li>
-                                    <li><a href="interview.php">अन्तर्वार्ता</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="other-news.php">अन्य</a></li>
                         </ul>
                     </div>
                     <span class="openNav" onclick="openNav()">&#9776; </span>
