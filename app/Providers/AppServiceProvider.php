@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer(['front.includes.footer'], function($view){
             $view->with('companyinfo', Companyinfo::first());
         });
-        View::composer(['front.includes.sidebar'], function($view){
+        View::composer(['front.includes.*'], function($view){
             $view->with('sidebar_poster', Poster::where('placement', 2)->first());
         });
 

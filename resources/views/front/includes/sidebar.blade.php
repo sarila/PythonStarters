@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-8 post-detail">
                         <div class="post-title">
-                            <p><a href="{{ route('newsSingle', $news->slug) }}">
+                            <p><a href="{{ route('newsSingleJanata', $news->slug) }}">
                                     {{ $news->news_title }}</a>
                         </div>
                         <div class="post-details">

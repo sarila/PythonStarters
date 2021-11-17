@@ -139,7 +139,7 @@
                                     <!-- {{$liked = $news->isLiked(Auth::user())}} -->
                                     <a href="javascript:" class="far fa-thumbs-up like" id="{{ $news->id }}" @if ($news->isLiked(Auth::user())==1) style="color:blue;" @endif></a>
                                     <a href="javascript:" class="far fa-thumbs-down like" id="{{ $news->id }}" ></a>
-                                    <li><button><i class="far fa-comment"></i></button></li>
+                                    <!-- <li><button><i class="far fa-comment"></i></button></li> -->
                                 </ul>
                             </div>
                         </div>

@@ -220,9 +220,6 @@
 </script>
 
 
-    
-
-
 @yield('front_js')
 </body>
 

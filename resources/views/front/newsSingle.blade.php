@@ -14,6 +14,7 @@
                 <div class="col-lg-8">
                     <div class="white-card">
                         <div class="list-wrapper">
+                            @if(!empty($news->author))
                             <div class="post-user">
                                 <div class="user-image">
                                     <img src="{{ asset('public/uploads/admin/'.$news->author->image) }}" alt="{{ $news->author->name }}">
@@ -26,6 +27,7 @@
                                 </div>
 
                             </div>
+                            @endif
                             <div class="latest-title">
                                 <h3><a href="javascript:">
                                         {{ $news->news_title }}
@@ -61,9 +63,9 @@
                             <div class="buttons-wrapper">
                                 <ul>
                                     <!-- {{$liked = $news->isLiked(Auth::user())}} -->
-                                    <a href="javascript:" class="far fa-thumbs-up like" id="{{ $news->id }}" @if ($news->isLiked(Auth::user())==1) style="color: blue;" @endif></a>
-                                    <a href="javascript:" class="far fa-thumbs-down like" id="{{ $news->id }}" @if ($news->isLiked(Auth::user())==0) style="color: blue;" @endif></a>
-                                    <li><button><i class="far fa-comment"></i></button></li>
+                                    <a href="javascript:" class="far fa-thumbs-up like" id="{{ $news->id }}"></a>
+                                    <a href="javascript:" class="far fa-thumbs-down like" id="{{ $news->id }}"></a>
+                                    <!-- <li><button><i class="far fa-comment"></i></button></li> -->
                                 </ul>
                             </div>
 

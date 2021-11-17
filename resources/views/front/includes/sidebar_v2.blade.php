@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-4">
                         <div class="post-image">
-                            <a href="{{ route('newsSingle', $news->slug) }}">
+                            <a href="{{ route('newsSingleJanata', $news->slug) }}">
                                 @if(!empty($news->thumbnail_image))
                                 <img src="{{ asset('public/uploads/news/janata/'.$news->thumbnail_image) }}" alt="{{ $news->news_title }}">
                                 @else
@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-8 post-detail">
                         <div class="post-title">
-                            <p><a href="{{ route('newsSingle', $news->slug) }}">
+                            <p><a href="{{ route('newsSingleJanata', $news->slug) }}">
                                     {{ $news->news_title }}</a>
                         </div>
                         <div class="post-details">
