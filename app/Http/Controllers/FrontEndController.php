@@ -11,6 +11,8 @@ use App\Models\NewsType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use DB;
+
 
 class FrontEndController extends Controller
 {
@@ -97,5 +99,13 @@ class FrontEndController extends Controller
 
 
         return view ('front.newsSingle', compact('news', 'gallery_images', 'related_news'));
+    }
+
+    //Search news 
+    public function search(Request $request) {
+            
+        $search_news=DB::table('news')->where('news_title','LIKE','%'.$request->title."%")->get();
+        return view('front.searchresult', compact('search_news'));
+        
     }
 }

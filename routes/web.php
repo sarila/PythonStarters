@@ -43,6 +43,9 @@ Route::post('/like', 'PostController@likePost')->name('like');
 //Like Janata News
 Route::post('/like-janatanews', 'JanataNewsController@likePost')->name('likeJanata');
 
+// Search News Functionality
+Route::get('/search','FrontEndController@search')->name('search');
+
 
 
 

@@ -6,7 +6,6 @@
 
 @section('content')
 
-
     <section class="breaking-news">
         <div class="container">
             <div class="news-outline">

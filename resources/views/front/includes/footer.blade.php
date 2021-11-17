@@ -145,8 +145,6 @@
         $("#statusSuscribe").hide();
 
     }
-
-
     //like and dislike through ajax call news
     $(document).ready(function () {
       $('.like').on('click', function(event) {
@@ -176,26 +174,6 @@
                 $('#like-count' + event.target.id).html(data.likes);
                 $('#dislike-count' + event.target.id).html(data.dislikes);
 
-            //     if(isLike == true){
-
-            //         if (event.target.style.color ='blue') {
-            //             event.target.style.color='black';
-            //         } 
-            //         else {
-            //             event.target.style.color='blue';
-            //             // event.target.nextElementSibling.style.color='black';
-            //         }
-            //     }
-            //     else if(isLike == false) {
-            //         if (event.target.style.color ='blue') {
-            //             event.target.style.color='black';
-            //         } 
-            //         else if(event.target.style.color ='black'){
-            //             event.target.style.color='blue';
-            //             console.log(event.target.previousElementSibling)
-            //             event.target.previousElementSibling.style.color='black';
-            //         }
-            //     }
             }
 
            
@@ -233,26 +211,6 @@
             else{
                 $('#like-count' + event.target.id).html(data.likes);
                 $('#dislike-count' + event.target.id).html(data.dislikes);
-
-                // if(isLike == true){
-
-                // if (event.target.style.color ='blue') {
-                //     event.target.style.color='black';
-                // } 
-                // else {
-                //     event.target.style.color='blue';
-                //     // event.target.nextElementSibling.style.color='black';
-                // }}
-                // else if(isLike == false) {
-                //     if (event.target.style.color ='blue') {
-                //         event.target.style.color='black';
-                //     } 
-                //     else if(event.target.style.color ='black'){
-                //         event.target.style.color='blue';
-                //         console.log(event.target.previousElementSibling)
-                //         event.target.previousElementSibling.style.color='black';
-                //     }
-                // }
             }
 
            
@@ -260,6 +218,10 @@
       });
     });
 </script>
+
+
+    
+
 
 @yield('front_js')
 </body>

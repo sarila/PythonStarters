@@ -85,26 +85,28 @@
     </div>
     <div class="test-div">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="wrapper-search-bar">
-                        <span class="prefix">From:</span> <span class="date-input"><input type="date"></span>
+            <form action="{{route('search')}}" method="get">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="wrapper-search-bar">
+                            <span class="prefix">From:</span> <span class="date-input"><input type="date" name="from" id="from"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="wrapper-search-bar">
-                        <span class="prefix">To:</span> <span class="date-input"><input type="date"></span>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="wrapper-search-bar">
+                            <span class="prefix">To:</span> <span class="date-input"><input type="date" name="to" id="to"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <span class="search-bar-field">
-                            <input type="search" placeholder="News Title">
+                            <input type="search" name="title" placeholder="News Title" id="newssearch">
                         </span>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <span><button type="submit" id="search" class="search-bar-btn"> SEARCH</button></span><span><button class="gone"><i class="fas fa-times"></i></button></span>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <span><button type="submit" class="search-bar-btn"> SEARCH</button></span><span><button class="gone"><i class="fas fa-times"></i></button></span>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>

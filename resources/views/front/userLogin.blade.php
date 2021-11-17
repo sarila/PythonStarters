@@ -57,7 +57,7 @@
                             <input type="submit" class="input-submit" value="LOGIN!">
                         </div>
                     </form>
-                    <div class="striped">
+                   <!--  <div class="striped">
                         <span class="striped-line"></span>
                         <span class="striped-text">Or</span>
                         <span class="striped-line"></span>
@@ -75,7 +75,7 @@
                                 <span class="fb-right"></i>Sign in with Facebook</span>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </section>
             </div>
         </main>
