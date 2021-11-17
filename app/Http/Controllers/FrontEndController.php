@@ -104,7 +104,9 @@ class FrontEndController extends Controller
     //Search news 
     public function search(Request $request) {
             
-        $search_news=DB::table('news')->where('news_title','LIKE','%'.$request->title."%")->get();
+        $search_news=DB::table('news')->where('news_title','LIKE','%'.$request->title."%")
+        ->whereBetween('created_at', [$request->from, $request->to])
+        ->get();
         return view('front.searchresult', compact('search_news'));
         
     }
